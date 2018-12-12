@@ -1,0 +1,249 @@
+@charset "UTF-8";
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-family: Arial, sans-serif; }
+
+#header, #footer {
+  width: 100%;
+  height: 350px;
+  background-color: black;
+  color: white;
+  padding: 30px; }
+
+#header {
+  background-image: url("https://wallpapercave.com/wp/r1fMFxw.jpg");
+  margin-bottom: 10px; }
+
+#footer {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  height: 200px;
+  background-image: url("https://wallpapercave.com/wp/r1fMFxw.jpg"); }
+
+button {
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+  background-image: none;
+  border: 1px solid black; }
+
+#footer h1 {
+  margin: 20px 0; }
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+.product-price, .product-title {
+  display: block; }
+
+.product-price {
+  grid-area: price;
+  height: 40px;
+  text-align: center;
+  text-decoration: underline;
+  margin: auto auto; }
+
+.product-title {
+  grid-area: title;
+  margin: auto auto;
+  text-align: center;
+  width: 80%;
+  font-weight: 500; }
+
+.product-add-to-cart {
+  grid-area: button;
+  margin-top: 20px; }
+
+.product-price:after {
+  content: "\433\440\43D."; }
+
+button:hover {
+  background-color: black;
+  color: white; }
+
+.category-name, .category-description {
+  display: block; }
+
+.category {
+  margin: 10px;
+  padding: 20px;
+  display: inline-block;
+  border: 1px solid white;
+  border-radius: 40px; }
+
+.category:hover {
+  text-decoration: underline;
+  background-color: white;
+  color: black; }
+
+.product {
+  border: 1px solid black;
+  margin: 4px;
+  padding: 20px;
+  display: grid;
+  border-radius: 5px;
+  grid-template-areas: "price photo" "title photo";
+  grid-auto-rows: 1fr auto; }
+
+.product-image {
+  max-width: 130px;
+  max-height: 180px;
+  object-fit: contain;
+  margin: auto;
+  padding: auto auto;
+  left: 0px;
+  grid-area: photo; }
+
+.product:hover * {
+  text-decoration: underline; }
+
+.category.selected {
+  background-color: white;
+  color: black; }
+
+.full-product > .selected-product {
+  display: none;
+  visibility: hidden; }
+
+.full-product.visible > .selected-product, .cart.visible {
+  border-radius: 40px 0px 0px 40px;
+  display: block;
+  visibility: visible;
+  position: fixed;
+  position: fixed;
+  right: 50%;
+  margin-right: -300px;
+  width: 600px;
+  top: 50%;
+  margin-top: -250px;
+  height: 500px;
+  background-color: white;
+  border: 2px solid green; }
+
+.cart.visible * {
+  display: block;
+  visibility: visible; }
+
+.cart * {
+  display: none;
+  visibility: hidden; }
+
+.category-list {
+  margin: 0 auto;
+  width: 800px; }
+
+.selected-product span {
+  display: block; }
+
+.full-product.visible .selected-product {
+  padding: 100px; }
+
+.selected-product .cross-out {
+  display: inline-block; }
+
+.full-product, .full-product * {
+  transition: visibility, display 1s; }
+
+.cross-out {
+  text-decoration: line-through; }
+
+.full-product.visible > .selected-product:after, .cart.visible:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 1000;
+  display: block;
+  position: fixed;
+  position: fixed;
+  right: 50%;
+  margin-right: -300px;
+  width: 600px;
+  top: 50%;
+  margin-top: -250px;
+  height: 500px;
+  z-index: -1; }
+
+.cart.visible, .selected-product {
+  overflow: scroll;
+  overflow-x: hidden; }
+
+.selected-product span {
+  display: block;
+  margin: 20px 0; }
+
+.cart.visible {
+  padding: 40px; }
+
+.cart.visible .cart-product-list > h1 {
+  margin: 10px; }
+
+.cart-product {
+  margin: 5px;
+  padding: 10px;
+  display: grid; }
+
+.cart-product span {
+  display: inline-block; }
+
+.cart-product .cart-product-image {
+  height: 80px;
+  display: inline-block;
+  grid-area: image; }
+
+.show-cart {
+  width: 100px;
+  height: 100px;
+  background-image: url("https://cdn4.iconfinder.com/data/icons/adiante-apps-app-templates-incos-in-grey/512/app_type_shop_512px_GREY.png");
+  background-size: 100% 100%; }
+
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  z-index: 500; }
+
+.cart form div {
+  margin: 30px 0;
+  font-style: italic; }
+
+.full-product.visible > .selected-product:before, .cart.visible:before {
+  content: "";
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  z-index: -100;
+  background-color: rgba(0, 0, 0, 0.8); }
+
+#header h1 {
+  text-align: center;
+  margin: 20px;
+  font-size: 70px; }
+
+.show-cart {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  border-radius: 10px; }
+
+.show-cart:hover {
+  background-color: white;
+  outline: 10px solid white;
+  border: 10px solid rgba(0, 0, 0, 0); }
+
+.cart h1 {
+  text-align: center; }
+
+form {
+  background-color: #16a085;
+  padding: 20px; }
+
