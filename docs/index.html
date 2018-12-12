@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>VIP OUTLET</title>
+	<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+	<div id="header">
+		<h1>VIP OUTLET</h1>
+		<div class="category-list"></div>
+		<button class="show-cart" type="button"></button>	
+	</div>
+
+	<div class="cart">	
+		<button class="close-btn" type="button">X</button>
+		<h1>cart</h1>
+
+		<div class="cart-product-list"></div>
+
+		<form name="card-form">
+
+			<div><label for="name">Enter your name</label>
+			<input type="text" id="name" name="name" required></div>
+
+			<div><label for="phone">Enter your phone number (+380123123123):</label>
+			<input type="tel" id="phone" name="phone" pattern="\+380[0-9]{9}" required></div>
+
+			<div><label for="email">Enter your email (example@mail.com):</label>
+			<input type="email" id="email" pattern=".+@.+" size="30" required></div>
+			
+			<button type="button" class="cart-buy-button">BUY</button>
+		</form>
+	</div>
+	
+	<div class="container">
+
+		<div class="product-grid"></div>
+
+	</div>
+
+	<div class="full-product"></div>
+
+	<div id="footer">
+		<h1 align="center">internet shop</h1>
+		<p align="center">phone number - +38068477477221</p>
+		<p align="center">email - super.puper.shop@gmail.com</p>
+	</div>
+	
+	<script src="./js/main.js"></script>
+</body>
+</html>
